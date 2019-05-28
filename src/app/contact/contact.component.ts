@@ -3,17 +3,23 @@ import { Component, OnInit, Input,Output,EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  template:'<div *ngIf="displayName; then ifBlock else elseBlock" > </div> <br> <ng-template #ifBlock> <h2> IF statement is running</h2></ng-template>  <ng-template #elseBlock> <h2> Else statement is running</h2></ng-template>',
+  template:'<br><input #myInput type="text"> <button (click)="logMessage(myInput.value)" value="submit">Submit</button><br>{{name}}',
   styles: []
 })
 
 
 export class ContactComponent implements OnInit {
 
-  public displayName = false;
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
-  }
+public name="See the result in console";
 
+    constructor(){
 
+    }
+    ngOnInit(){
+
+    }
+    logMessage(value){
+      console.log(value)
+
+    }
 }
